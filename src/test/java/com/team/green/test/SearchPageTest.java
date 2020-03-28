@@ -2,27 +2,25 @@ package com.team.green.test;
 
 import com.team.green.base.BaseTest;
 import com.team.green.page.SearchPage;
+import com.thoughtworks.gauge.BeforeStep;
 import com.thoughtworks.gauge.Step;
 
-public class SearchPageTest extends BaseTest {
+public class SearchPageTest extends BaseTest{
 
-    SearchPage sepetPage;
+    SearchPage searchPage;
 
-    @Step({"Siteye gidilir"})
+    @BeforeStep
     public void before() {
-        sepetPage = new SearchPage(getWebDriver());
+        searchPage =new SearchPage(getWebDriver());
     }
 
-    @Step({"Search text <text>"})
-    public void searchText (String text){
-        sepetPage.search(text);
+    @Step({"Arayama <text> yazıldı"})
+    public void searchEnterText(String text) {
+        searchPage.searchEnterText(text);
     }
 
-    @Step({"Click Search"})
-    public void searchClick (){
-        sepetPage.searchClick();
+    @Step({"Arama icona tıklandı"})
+    public void clickSearch (){
+        searchPage.searchClick();
     }
-
-
-
 }

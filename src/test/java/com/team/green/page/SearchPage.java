@@ -10,19 +10,12 @@ public class SearchPage extends BasePage {
     public SearchPage(WebDriver driver) {
         super(driver);
     }
-
-    public SearchPage search(String product){
-        sendKeys(INPUT,product);
-        return this;
+    public void searchEnterText(String searchText){
+        sendKeys(INPUT,searchText);
     }
 
-    public SearchPage searchClick() {
+    public void searchClick(){
         click(SEARCH);
-        return this;
-    }
-    public String getText(){
-        return  getText(PRODUCT_NAMEPAGE);
-
     }
 
 }
